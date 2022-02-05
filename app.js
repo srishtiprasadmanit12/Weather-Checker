@@ -5,7 +5,6 @@ const bodyParser=require("body-parser");
 const app=express()
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
-//const configApi=require(__dirname+"/config.js")
 require('dotenv').config();
 
 app.get("/",function(req,res){
