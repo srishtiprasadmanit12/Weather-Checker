@@ -3,7 +3,11 @@ const express=require("express");
 const http=require("https");
 const bodyParser=require("body-parser");
 const app=express()
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
+//const configApi=require(__dirname+"/config.js")
+require('dotenv').config();
+
 app.get("/",function(req,res){
    
     res.sendFile(`${__dirname}/index.html`)
@@ -12,7 +16,7 @@ app.get("/",function(req,res){
 app.post("/",function(req,res){
    console.log() ;
    const query=req.body.CityName
-   const apikey="63c583d0f019ab8c90b4a03667dbd92b";
+   let apikey=process.env.API_KEY;
    const unit="metric";
   
    const url="https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid="+apikey+"&units=metric"

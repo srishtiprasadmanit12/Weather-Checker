@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(90deg, #754d8b 0%, #4e5992 100%);
+    font-size: 18px;
+  }
+  .container {
+    height: 300px;
+    width: 450px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
