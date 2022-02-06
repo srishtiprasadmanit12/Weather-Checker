@@ -1,12 +1,39 @@
 body {
-    background: linear-gradient(90deg, #754d8b 0%, #4e5992 100%);
+    
     font-size: 18px;
-  }
-  .container {
-    height: 300px;
-    width: 450px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+    background-image: url('https://source.unsplash.com/random/?landscape');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    opacity:1;
+   background-size: cover;
+}
+.container {
+  background: linear-gradient(90deg, #754d8b 0%, #4e5992 100%);
+  border-radius: 1rem;
+  padding:5rem;
+  opacity: 0.75;
+  box-shadow: 0 0 10px 5px;
+  text-align: center;
+  justify-content: center;
+  color:white;
+  font-weight: bolder;
+ 
+}
+form .label{
+  width:100%;
+  height:40px;
+  text-align: center;
+  justify-content: center;
+  font-weight: bolder;
+  color:white;
+}
+.button input:focus{
+  transform:translateY(-1rem);
+  
+}
+
+input[type=text] {
+  padding:0.25rem;
+}
