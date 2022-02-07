@@ -31,15 +31,15 @@ app.post("/",function(req,res){
         const icon=weatherData.weather[0].icon;
         const imageURL=" http://openweathermap.org/img/wn/"+icon+"@2x.png";
         res.render("display",{query:query,temp:temp,weatherDescription:weatherDescription,imageURL:imageURL})
-        // res.write("<h1> "+query+" temperature is "+temp+"</h1>");
-        // res.write("<p>the weather  is currently"+weatherDescription+"</p>")
-        // res.write("<img src="+imageURL+ ">")
-        // res.send();
-        // console.log(weatherData)
+        res.write("<h1> "+query+" temperature is "+temp+"</h1>");
+        res.write("<p>the weather  is currently"+weatherDescription+"</p>")
+        res.write("<img src="+imageURL+ ">")
+        res.send();
+        console.log(weatherData)
     })
 })
 })
 
-app.listen(3000,function(){
+app.listen(process.env.PORT||3000,function(){
     console.log("server is running on port 3000");
 })
