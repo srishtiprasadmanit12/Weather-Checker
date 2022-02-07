@@ -23,7 +23,7 @@ app.post("/",function(req,res){
   
    const url="https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid="+apikey+"&units=metric"
     http.get(url,function(response){
-    console.log(response.statusCode);
+    //console.log(response.statusCode);
     response.on("data",function(data){
         const weatherData=JSON.parse(data);
         const temp=weatherData.main.temp;
@@ -31,11 +31,11 @@ app.post("/",function(req,res){
         const icon=weatherData.weather[0].icon;
         const imageURL=" http://openweathermap.org/img/wn/"+icon+"@2x.png";
         res.render("display",{query:query,temp:temp,weatherDescription:weatherDescription,imageURL:imageURL})
-        res.write("<h1> "+query+" temperature is "+temp+"</h1>");
-        res.write("<p>the weather  is currently"+weatherDescription+"</p>")
-        res.write("<img src="+imageURL+ ">")
+        // res.write("<h1> "+query+" temperature is "+temp+"</h1>");
+        // res.write("<p>the weather  is currently"+weatherDescription+"</p>")
+        // res.write("<img src="+imageURL+ ">")
         res.send();
-        console.log(weatherData)
+        //console.log(weatherData)
     })
 })
 })
